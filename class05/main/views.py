@@ -8,8 +8,8 @@ def home(request):
 
 
 def about(request):
-    return render(request, 'main/about.html')
+    return render(request, 'main/about-us.html')
 
 
-def experince(request):
-    pass
+def service(request):
+    return render(request, 'main/service.html')

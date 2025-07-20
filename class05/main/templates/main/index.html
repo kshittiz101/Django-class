@@ -1,0 +1,19 @@
+<!-- extends base html -->
+
+{% extends 'main/base.html' %} {% load static %}
+
+<!-- title -->
+{% block title %} Home {% endblock %}
+
+<!-- css block  -->
+{% block style %} {% endblock %}
+
+<!-- content -->
+
+{% block content %}
+
+<!-- including tempate -->
+{% include 'main/carsouel.html' %}
+<h2>THis is home page</h2>
+
+{% endblock %}
