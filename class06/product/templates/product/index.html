@@ -1,5 +1,40 @@
 {% extends "product/base.html" %} {# load static #} {% load static %} {# title
-#} {% block title %} Home {% endblock title %} {# content #} {% block content %}
+#} {% block title %} Home {% endblock title %}
 
-<h2>THis is Home page</h2>
+<!-- content -->
+{% block content%}
+
+<div class="container-fluid p-4">
+  <h2>CRUD Products Using {{ course }}</h2>
+
+  <div class="table-container border mt-4">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Price</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for product in key %}
+        <tr>
+          <th scope="row">{{ product.id }}</th>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.price }}</td>
+
+          <td>
+            <a href="" type="button" class="btn btn-primary">Edit</a>
+            <a href="" type="button" class="btn btn-danger">Delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
 {% endblock content %}
