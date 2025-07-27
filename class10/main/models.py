@@ -7,3 +7,6 @@ class Product(models.Model):
     name = models.CharField(max_length=200)  # string 225
     desc = models.TextField()  # string
     price = models.IntegerField()  # number
+
+    def __str__(self):
+        return self.name

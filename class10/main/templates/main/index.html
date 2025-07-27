@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-  </head>
-  <body>
-    <h2>Home</h2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Non accusamus
-      voluptatem ad rerum neque nostrum, vel molestias dolore eligendi molestiae
-      explicabo similique doloribus optio dignissimos ipsa. Earum inventore vero
-      ea.
-    </p>
-  </body>
-</html>
+<!-- extends  -->
+{% extends 'main/base.html' %}
+
+<!-- title -->
+{% block title %} Home {% endblock %}
+
+<!-- content -->
+{% block content %}
+<h2 class="text-bg-primary">THis is HOme page</h2>
+
+{% endblock %}
