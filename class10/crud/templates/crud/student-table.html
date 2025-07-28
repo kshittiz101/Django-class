@@ -3,45 +3,48 @@
 {% extends 'main/base.html' %}
 <!-- title -->
 
-{% block title %} {% endblock %}
+{% block title %} Student Table {% endblock %}
 <!-- content -->
 
 {% block content %}
 <div class="container-fluid p-4">
+  <div class="row my-4">
+    <div class="col-6">Crud Operations</div>
+    <div class="col-6">
+      <a href="" class="btn btn-primary">Add New Student</a>
+    </div>
+  </div>
   <div class="row">
     <div class="col-12">
       <table class="table border">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Age</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
+          {% for counter in students %}
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th scope="row">{{ counter.id }}</th>
+            <td>{{ counter.stu_name }}</td>
+            <td>{{ counter.stu_email }}</td>
+            <td>{{ counter.stu_age }}</td>
+            <td>{{ counter.gender }}</td>
+
+            <td>
+              <a href="" class="btn btn-primary">Edit</a>
+              <a href="" class="btn btn-danger">Delete</a>
+            </td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>John</td>
-            <td>Doe</td>
-            <td>@social</td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
   </div>
 </div>
-
 {% endblock %}
