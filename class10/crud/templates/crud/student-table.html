@@ -11,7 +11,7 @@
   <div class="row my-4">
     <div class="col-6">Crud Operations</div>
     <div class="col-6">
-      <a href="" class="btn btn-primary">Add New Student</a>
+      <a href="{% url 'register' %}" class="btn btn-success">Add New Student</a>
     </div>
   </div>
   <div class="row">
@@ -28,14 +28,13 @@
           </tr>
         </thead>
         <tbody>
-          {% for counter in students %}
+          {% for counter in keys %}
           <tr>
             <th scope="row">{{ counter.id }}</th>
             <td>{{ counter.stu_name }}</td>
             <td>{{ counter.stu_email }}</td>
             <td>{{ counter.stu_age }}</td>
             <td>{{ counter.gender }}</td>
-
             <td>
               <a href="" class="btn btn-primary">Edit</a>
               <a href="" class="btn btn-danger">Delete</a>
