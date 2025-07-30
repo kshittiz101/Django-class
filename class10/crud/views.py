@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Student
 
 # Create your views here.
@@ -40,3 +40,40 @@ def register_student(request):
             return redirect('student-table')
 
     return render(request, 'crud/student-register.html')
+
+
+def update_student(request, pk):
+
+    student = get_object_or_404(Student, pk=pk)
+
+    if request.method == 'POST':
+        update_name = request.POST.get('update-name')
+        update_age = request.POST.get('update-age')
+        update_email = request.POST.get('update-email')
+        update_gender = request.POST.get('update-gender')
+
+        # orm update (error )
+        # update_status = Student.objects.update(
+        #     stu_name=update_name, stu_age=update_age,
+        #     stu_email=update_email, gender=update_gender
+        # )
+
+        # actual ways of updating data
+        student.stu_name = update_name
+        student.stu_age = update_age
+        student.stu_email = update_email
+        student.gender = update_gender
+        student.save()
+        return redirect('student-table')
+
+    # sunil@gmail.com
+    # print(student)
+    context = {'key': student}
+
+    return render(request, 'crud/student-update.html', context)
+
+
+def student_delete(request, pk):
+    student = get_object_or_404(Student, pk=pk)
+    student.delete()
+    return redirect('student-table')

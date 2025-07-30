@@ -36,8 +36,12 @@
             <td>{{ counter.stu_age }}</td>
             <td>{{ counter.gender }}</td>
             <td>
-              <a href="" class="btn btn-primary">Edit</a>
-              <a href="" class="btn btn-danger">Delete</a>
+              <a href="{% url 'update' counter.id  %}" class="btn btn-primary">
+                Edit
+              </a>
+              <a href="{% url 'delete' counter.id %}" class="btn btn-danger">
+                Delete
+              </a>
             </td>
           </tr>
           {% endfor %}

@@ -14,5 +14,8 @@ class Student(models.Model):
     ]
     stu_name = models.CharField(max_length=100)
     stu_age = models.IntegerField()
-    stu_email = models.EmailField(unique=True)
+    stu_email = models.EmailField()
     gender = models.CharField(choices=GERDER_CHOICES, max_length=50)
+
+    def __str__(self):
+        return self.stu_email
