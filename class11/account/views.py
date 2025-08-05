@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login,logout
+from django.contrib.auth import authenticate, login, logout
 
 from .models import Student
 # Create your views here.
@@ -8,9 +8,6 @@ from .models import Student
 
 def home(request):
     return render(request, 'account/home.html')
-
-
-
 
 
 def register_page(request):
@@ -42,17 +39,18 @@ def register_page(request):
 
 
 def login_page(request):
-    if request.method =='POST':
+    if request.method == 'POST':
         log_username = request.POST.get('username')
         log_password = request.POST.get('password')
-        user = authenticate(request, username=log_username, password= log_password)
-
+        user = authenticate(
+            request, username=log_username,
+            password=log_password
+        )
         if user is not None:
             login(request, user)
             return redirect("home")
         else:
             return HttpResponse("Invalid User")
-
     return render(request, 'account/login.html')
 
 
