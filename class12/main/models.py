@@ -22,7 +22,7 @@ class Student(models.Model):
 
 
 # one to one relationships use
-# SIngle table ko data lai more information gather gara help garxa
+# Single table ko data lai more information gather gara help garxa
 
 # Sinle data of 1st table is related to single data of another table data
 # is called one to one relationship
