@@ -1,14 +1,56 @@
 {% extends 'core/base.html' %}
 
+<!-- load static  -->
+{% load static %}
 <!-- title -->
 {% block title %} Home {% endblock %}
 
 <!-- content -->
 {% block content %}
-<h4 class="bg-blue-500">
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quod
-  dignissimos non quidem quis tenetur facere quisquam deserunt laborum quam a
-  porro, soluta eius dicta. Illum accusantium voluptate a molestiae!
-</h4>
+<div class="main-container h-screen w-full">
+  <!-- navbar -->
 
+  <!-- hero section -->
+  <div
+    class="hero-section px-[60px] py-6 bg-[url('{% static 'core/images/blog-bg.jpg' %}')] bg-cover bg-center"
+  >
+    {% include 'core/navbar.html' %}
+    <div
+      class="hero-container h-[70vh] w-full flex justify-center items-center text-center px-4"
+    >
+      <div class="hero-content max-w-[650px] text-white">
+        <button
+          class="bg-white/80 text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow hover:bg-white transition"
+        >
+          Blog
+        </button>
+
+        <p class="text-5xl font-bold mt-4 text-black">
+          Discover Latest Blog Posts
+        </p>
+
+        <p class="text-sm mt-4 text-gray-500 leading-relaxed">
+          Explore the latest blog posts covering technology, programming, and
+          beyond. Stay informed with fresh insights, practical tips, and trends
+          shaping the digital world.
+        </p>
+
+        <div
+          class="custom-search mt-6 flex items-center gap-2 bg-white rounded-full shadow p-2 max-w-md mx-auto"
+        >
+          <input
+            type="text"
+            placeholder="Search your blog..."
+            class="flex-1 outline-none px-3 py-2 text-gray-700 rounded-full"
+          />
+          <button
+            class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full transition"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
